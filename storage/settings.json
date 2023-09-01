@@ -1,0 +1,16 @@
+{
+    "paused": true,
+    "files_identifier": true,
+    "files_rename": true,
+    "files_index": true,
+    "tmdb_index": false,
+    "tmdb_token": "",
+    "tmdb_rename": true,
+    "ffmpeg_path": "\/usr\/bin\/ffmpeg",
+    "ffprobe_path": "\/usr\/bin\/ffprobe",
+    "files_finder": true,
+    "plex_enabled": true,
+    "plex_url": "http:\/\/localhost:32400\/",
+    "plex_token": "",
+    "plex_library_update": true
+}
