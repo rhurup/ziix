@@ -10,10 +10,6 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::dropIfExists("movies");
-        Schema::dropIfExists("movies_paths");
-        Schema::dropIfExists("movies_clips");
-        Schema::dropIfExists("movies_indexes");
 
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
@@ -22,7 +18,7 @@ return new class extends Migration {
             $table->string("filename")->default("");
             $table->string("subfolder")->default("");
             $table->string("extension")->nullable();
-            $table->string("hash", 255)->index();
+            $table->string("hash", 255)->index()->unique("movie_hash");
             $table->tinyInteger("status")->default(0);
             $table->string("title")->index()->default("");
             $table->integer("type")->index()->default(0);
@@ -80,7 +76,7 @@ return new class extends Migration {
             $table->tinyInteger("status")->default(0)->index();
             $table->string("path");
             $table->string("sha")->default("");
-            $table->integer("plex_key");
+            $table->string("plex_key")->default("");
             $table->integer("type")->index();
             $table->timestamps();
         });
